@@ -8,20 +8,20 @@ import java.util.List;
 public class Anagram {
 	public static List<String> funWithAnagrams(List<String> text) {
 	    // Write your code here
-	    String[] stArray = new String[text.size()];
-	    //ArrayList<String> al = (ArrayList)text;
-	    String[] s = text.toArray(stArray);
+	    //String[] stArray = new String[text.size()];
+	    ArrayList<String> al = (ArrayList)text;
+	    //String[] s = text.toArray(stArray);
 	    ArrayList<String> s1=new ArrayList<String>();
 	        ArrayList<String> newList=new ArrayList<String>();
 	        String x;
-	        for(int i=0;i<s.length;i++)
+	        for(int i=0;i<al.size();i++)
 	        {
-	            char[] c=s[i].toCharArray();
-	            Arrays.sort(c);
-	            x=new String(c);
+	            char[] c=al.get(i).toCharArray(); //i=0: {'c','o','d','e'}, //i=1: {'f','r','a','m','e','r'}
+	            Arrays.sort(c);	//{'c','d','e','o'}, {'a','e','f','m','r', 'r'}
+	            x=new String(c); //"cdeo", "aefmrr"
 	            if(!s1.contains(x))
 	            {
-	                newList.add(s[i]);
+	                newList.add(al.get(i));
 	                s1.add(x);
 	            }
 
